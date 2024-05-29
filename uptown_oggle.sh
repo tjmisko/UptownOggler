@@ -28,7 +28,7 @@ push_notification_jen() {
 	curl -X POST -H "$HEADER" -d "$DATA" https://api.pushover.net/1/messages.json
 } 
 
-uptown_oggle() {
+oggle() {
 	# Fetch prices, then push the notification if there's anything good in it
 	MESSAGE=$(fetch_prices | filter_prices)
 	if [[ $MESSAGE != *"TheUptown has 0 offer(s) of interest:"* ]]; then
